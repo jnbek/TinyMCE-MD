@@ -1,4 +1,4 @@
-package TinyMCE_MD
+package TinyMCE_MD;
 
 use strict;
 use warnings;
@@ -16,3 +16,5 @@ sub main_hash_swap {
 sub main_finalize {
     my $self = shift;
 }
+
+1;
