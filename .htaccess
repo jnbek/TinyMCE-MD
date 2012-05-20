@@ -1,0 +1,5 @@
+Options +ExecCGI +FollowSymLinks
+DirectoryIndex tinymce
+<Files tinymce>
+    SetHandler cgi-script
+</Files>
