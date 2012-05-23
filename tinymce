@@ -2,13 +2,12 @@
 
 =head1 NAME
 
-tinymce: Base loader for TinyMCE_MD
+tinymce: Base loader for TinyMCE
 
 =cut
 
 use strict;
 use warnings;
-use base qw(App::TinyMCE_MD);
-
-App::TinyMCE_MD->navigate;
+use App::TinyMCE;
+App::TinyMCE->navigate;
 exit;

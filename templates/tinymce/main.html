@@ -4,11 +4,12 @@
 <title>TinyMCE-MD: An HTML to Markdown Converter</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <!-- TinyMCE -->
-<script type="text/javascript" src="../jscripts/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src="assets/js/tiny_mce.js"></script>
 <script type="text/javascript">
 	tinyMCE.init({
 		// General options
-		mode : "textareas",
+		mode : "exact",
+    elements : "elm1",
 		theme : "advanced",
 		plugins : "autolink,lists,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,autosave",
 
@@ -23,7 +24,7 @@
 		theme_advanced_resizing : true,
 
 		// Example content CSS (should be your site CSS)
-		content_css : "css/content.css",
+		//content_css : "assets/css/content.css",
 
 		// Drop lists for link/image/media/template dialogs
 		template_external_list_url : "lists/template_list.js",
@@ -43,10 +44,6 @@
 		],
 
 		// Replace values for the template plugin
-		template_replace_values : {
-			username : "Some User",
-			staffid : "991234"
-		}
 	});
 </script>
 <!-- /TinyMCE -->
@@ -56,7 +53,7 @@
 
   <form method="post" action="[% script_name %]" name="[% form_name %]">
 	<div>
-		<h3>HTML Entry</h3>
+		<h3>HTML Entry: </h3>
 
 		<!-- Gets replaced with TinyMCE, remember HTML in a textarea should be encoded -->
 		<div>
@@ -64,7 +61,7 @@
 			</textarea>
 		</div>
 
-		<!-- Some integration calls -->
+		<!-- Some integration calls
 		<a href="javascript:;" onclick="tinyMCE.get('elm1').show();return false;">[Show]</a>
 		<a href="javascript:;" onclick="tinyMCE.get('elm1').hide();return false;">[Hide]</a>
 		<a href="javascript:;" onclick="tinyMCE.get('elm1').execCommand('Bold');return false;">[Bold]</a>
@@ -74,17 +71,17 @@
 		<a href="javascript:;" onclick="alert(tinyMCE.get('elm1').selection.getNode().nodeName);return false;">[Get selected element]</a>
 		<a href="javascript:;" onclick="tinyMCE.execCommand('mceInsertContent',false,'<b>Hello world!!</b>');return false;">[Insert HTML]</a>
 		<a href="javascript:;" onclick="tinyMCE.execCommand('mceReplaceContent',false,'<b>{$selection}</b>');return false;">[Replace selection]</a>
-
+    -->
 		<br />
 		<input type="submit" name="save" value="Submit" />
 		<input type="reset" name="reset" value="Reset" />
 	</div>
 </form>
-
-<script type="text/javascript">
-if (document.location.protocol == 'file:') {
-	alert("The examples might not work properly on the local file system due to security settings in your browser. Please use a real webserver.");
-}
-</script>
+<br />
+<h3> Markdown Output: </h3>
+<form name="notinymce">
+<textarea name="output" id="output" cols="80" rows="45" style="width: 80%" readonly>
+</textarea>
+</form>
 </body>
 </html>
