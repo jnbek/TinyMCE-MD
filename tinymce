@@ -1,4 +1,4 @@
-i#!/usr/bin/perl -w
+#!/usr/bin/perl -w
 
 =head1 NAME
 
@@ -8,7 +8,7 @@ tinymce: Base loader for TinyMCE_MD
 
 use strict;
 use warnings;
-use App::TinyMCE_MD;
+use base qw(App::TinyMCE_MD);
 
 App::TinyMCE_MD->navigate;
 exit;

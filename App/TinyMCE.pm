@@ -3,7 +3,7 @@ package TinyMCE_MD;
 use strict;
 use warnings;
 
-use base qw(CGI:Ex::App);
+use base qw(CGI::Ex::App);
 use CGI::Ex::Dump qw(debug);
 use HTML::WikiConverter;
 
